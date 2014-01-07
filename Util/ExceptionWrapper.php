@@ -30,6 +30,11 @@ class ExceptionWrapper
      * @var mixed
      */
     private $errors;
+    
+    /**
+     * @var string
+     */    
+    private $status;
 
     /**
      * @param array $data
@@ -38,6 +43,7 @@ class ExceptionWrapper
     {
         $this->code = $data['status_code'];
         $this->message = $data['message'];
+        $this->status = $data['status'];
 
         if (isset($data['errors'])) {
             $this->errors = $data['errors'];
